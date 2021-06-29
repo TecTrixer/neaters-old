@@ -127,6 +127,7 @@ impl TicTacToeGame {
         }
     }
 
+    // Function for printing out a prettified board as a multiline String
     pub fn format_board(&self) -> String {
         let mut res: String = "".to_string();
         for row in &self.board {
