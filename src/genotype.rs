@@ -3,20 +3,20 @@ use std::fs::OpenOptions;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Link {
-    input_node: u32,
-    output_node: u32,
-    disabled: bool,
-    weight: f64,
+    pub input_node: u32,
+    pub output_node: u32,
+    pub disabled: bool,
+    pub weight: f64,
     innovation_number: u32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Node {
-    number: u32,
-    node_type: NodeType,
+    pub number: u32,
+    pub node_type: NodeType,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, PartialEq, Copy, Clone, Debug)]
 pub enum NodeType {
     Input,
     Hidden,
@@ -25,8 +25,8 @@ pub enum NodeType {
 
 #[derive(Serialize, Deserialize)]
 pub struct Genotype {
-    nodes: Vec<Node>,
-    links: Vec<Link>,
+    pub nodes: Vec<Node>,
+    pub links: Vec<Link>,
 }
 
 impl Genotype {
